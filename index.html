@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aki London | Japanese Dining in Marylebone</title>
+<meta name="description" content="Aki London — an elevated Japanese dining experience at 1 Cavendish Square, Marylebone. Discover sushi, sashimi, contemporary Japanese cuisine and afternoon tea.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#101010;--cream:#f4efe7;--gold:#c6a66b;--muted:#aaa39a;--line:rgba(255,255,255,.15)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:#fff;font-family:Inter,Arial,sans-serif;font-weight:300;line-height:1.6}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:24px 5vw;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(0,0,0,.8),transparent);transition:.3s}
+.nav.scrolled{background:rgba(10,10,10,.94);padding:16px 5vw;border-bottom:1px solid var(--line)}
+.logo{font-family:"Cormorant Garamond",serif;font-size:36px;letter-spacing:8px;font-weight:600}
+.logo span{color:var(--gold)}
+.navlinks{display:flex;gap:34px;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.navlinks a:hover{color:var(--gold)}
+.navcta{border:1px solid rgba(255,255,255,.45);padding:11px 18px;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.hero{min-height:100vh;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;background:linear-gradient(90deg,rgba(0,0,0,.7),rgba(0,0,0,.18)),url("https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=2200&q=85") center/cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#101010 0%,transparent 22%,rgba(0,0,0,.15) 100%)}
+.hero-content{position:relative;z-index:2;padding:100px 20px 40px}
+.eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#ddd;margin-bottom:22px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(68px,11vw,150px);font-weight:500;line-height:.82;letter-spacing:5px}
+.hero h1 em{display:block;color:var(--gold);font-weight:400}
+.hero p{max-width:600px;margin:30px auto;font-size:15px;color:#eee}
+.btn{display:inline-block;border:1px solid var(--gold);padding:15px 30px;color:#fff;letter-spacing:2.5px;font-size:10px;text-transform:uppercase;transition:.3s}
+.btn:hover{background:var(--gold);color:#111}
+.btn.light{border-color:#fff;margin-left:10px}
+.scroll{position:absolute;z-index:3;bottom:30px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#ccc}
+.scroll:after{content:"";display:block;width:1px;height:42px;background:var(--gold);margin:10px auto 0}
+section{padding:120px 7vw}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:9vw;align-items:center;background:var(--cream);color:#111}
+.intro-img{height:600px;background:url("https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=1300&q=85") center/cover}
+.kicker{color:#9b7b40;font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:18px}
+h2{font-family:"Cormorant Garamond",serif;font-size:clamp(46px,6vw,76px);font-weight:500;line-height:.98;margin-bottom:25px}
+.intro p{color:#555;max-width:520px;margin-bottom:30px}
+.darkbtn{border-color:#111;color:#111}
+.darkbtn:hover{background:#111;color:#fff}
+.experience{text-align:center;background:#111}
+.experience h2{max-width:750px;margin:0 auto 55px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{min-height:470px;position:relative;overflow:hidden;display:flex;align-items:flex-end;text-align:left;background-size:cover;background-position:center}
+.card:nth-child(1){background-image:linear-gradient(0deg,rgba(0,0,0,.85),transparent 60%),url("https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=1000&q=85")}
+.card:nth-child(2){background-image:linear-gradient(0deg,rgba(0,0,0,.85),transparent 60%),url("https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1000&q=85")}
+.card:nth-child(3){background-image:linear-gradient(0deg,rgba(0,0,0,.85),transparent 60%),url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=85")}
+.card-content{padding:30px}
+.card small{font-size:9px;letter-spacing:3px;color:#ddd;text-transform:uppercase}
+.card h3{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:500;margin-top:7px}
+.menu{background:#171717}
+.menu-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:9vw}
+.menu h2{color:#fff}
+.menu-intro{color:#aaa;max-width:430px}
+.menu-list{border-top:1px solid #444}
+.item{display:flex;justify-content:space-between;gap:30px;padding:25px 0;border-bottom:1px solid #333}
+.item h3{font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:500}
+.item p{font-size:12px;color:#8e8e8e;margin-top:4px}
+.item span{color:var(--gold);white-space:nowrap}
+.quote{background:var(--cream);color:#111;text-align:center;padding:130px 10vw}
+.quote blockquote{font-family:"Cormorant Garamond",serif;font-size:clamp(38px,5vw,64px);line-height:1.05;max-width:950px;margin:auto}
+.quote cite{display:block;margin-top:30px;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:#887044;font-style:normal}
+.visit{display:grid;grid-template-columns:1fr 1fr;padding:0;background:#0b0b0b}
+.visit-info{padding:110px 8vw}
+.visit-map{min-height:500px;background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.4)),url("https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1300&q=85") center/cover}
+.details{margin:35px 0;color:#bbb;font-size:13px}
+.details strong{display:block;color:#fff;font-size:10px;letter-spacing:3px;text-transform:uppercase;margin:20px 0 6px}
+footer{padding:50px 7vw;border-top:1px solid #282828;display:flex;justify-content:space-between;align-items:center;color:#777;font-size:10px;letter-spacing:2px;text-transform:uppercase}
+footer .logo{color:#fff;font-size:27px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:800px){
+.nav{padding:18px 20px}.navlinks{display:none}.logo{font-size:29px}.navcta{padding:9px 12px}
+section{padding:80px 6vw}.intro,.menu-wrap,.visit{grid-template-columns:1fr}.intro-img{height:420px;order:2}.cards{grid-template-columns:1fr}.card{min-height:380px}
+.hero h1{font-size:74px}.hero p{font-size:13px}.btn{padding:13px 18px}.btn.light{margin-left:5px}
+.visit-map{min-height:360px;order:-1}footer{flex-direction:column;gap:20px;text-align:center}
+}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+  <a class="logo" href="#home">AKI<span>.</span></a>
+  <nav class="navlinks">
+    <a href="#story">Our Story</a><a href="#experience">Experience</a><a href="#menu">Menu</a><a href="#visit">Visit</a>
+  </nav>
+  <a class="navcta" href="https://www.sevenrooms.com/experiences/akilondon/afternoon-tea-5726208167428096" target="_blank">Reserve</a>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">Japanese Dining · Marylebone · London</div>
+    <h1>Aki <em>London</em></h1>
+    <p>A refined Japanese dining experience in the heart of Marylebone, where beautiful ingredients, expressive flavours and warm hospitality meet.</p>
+    <a class="btn" href="https://www.sevenrooms.com/experiences/akilondon/afternoon-tea-5726208167428096" target="_blank">Reserve a Table</a>
+    <a class="btn light" href="#menu">Explore Menu</a>
+  </div>
+  <div class="scroll">Discover</div>
+</section>
+
+<section class="intro reveal" id="story">
+  <div class="intro-img"></div>
+  <div>
+    <div class="kicker">The Aki experience</div>
+    <h2>Japanese craft.<br>London soul.</h2>
+    <p>Aki brings a contemporary Japanese point of view to a beautifully restored former bank at 1 Cavendish Square. From delicate sushi and sashimi to distinctive desserts, every detail is designed to feel elegant, generous and memorable.</p>
+    <a class="btn darkbtn" href="#visit">Discover Aki</a>
+  </div>
+</section>
+
+<section class="experience reveal" id="experience">
+  <div class="kicker">A table worth remembering</div>
+  <h2>Moments made for<br>lingering a little longer.</h2>
+  <div class="cards">
+    <article class="card"><div class="card-content"><small>01 · Cuisine</small><h3>Sushi & Sashimi</h3></div></article>
+    <article class="card"><div class="card-content"><small>02 · Signature</small><h3>Japanese Favourites</h3></div></article>
+    <article class="card"><div class="card-content"><small>03 · Sweet Finish</small><h3>Modern Desserts</h3></div></article>
+  </div>
+</section>
+
+<section class="menu reveal" id="menu">
+  <div class="menu-wrap">
+    <div>
+      <div class="kicker">From the kitchen</div>
+      <h2>A taste of<br>Aki London.</h2>
+      <p class="menu-intro">A selection inspired by the flavours and dishes celebrated by Aki guests. Visit the full menu for the latest offering.</p>
+      <br><a class="btn" href="https://akilondon.com/menu/" target="_blank">View Full Menu</a>
+    </div>
+    <div class="menu-list">
+      <div class="item"><div><h3>Seared Salmon Sushi</h3><p>Elegant, fresh and beautifully presented.</p></div><span>Signature</span></div>
+      <div class="item"><div><h3>Sashimi Platter</h3><p>A refined selection of the sea.</p></div><span>Selection</span></div>
+      <div class="item"><div><h3>Wagyu</h3><p>Premium Japanese-inspired dining.</p></div><span>Chef's choice</span></div>
+      <div class="item"><div><h3>Tuna Tartare</h3><p>Delicate textures with vibrant flavour.</p></div><span>Aki style</span></div>
+      <div class="item"><div><h3>Japanese Afternoon Tea</h3><p>Chicken katsu, green-tea-smoked salmon, truffle eggs and delicate pâtisserie.</p></div><span>£49.50 pp</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote reveal">
+  <blockquote>“Fresh, beautifully presented Japanese cuisine, an elegant atmosphere and exceptional service.”</blockquote>
+  <cite>Aki London · Guest experience</cite>
+</section>
+
+<section class="visit reveal" id="visit">
+  <div class="visit-info">
+    <div class="kicker">Find us</div>
+    <h2>Come to<br>Cavendish Square.</h2>
+    <div class="details">
+      <strong>Address</strong>1 Cavendish Square, London W1G 0LA<br>United Kingdom
+      <strong>Opening</strong>Open · Closes 2 AM
+      <strong>Phone</strong><a href="tel:+447402847957">+44 7402 847957</a>
+    </div>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Aki+London+1+Cavendish+Square" target="_blank">Get Directions</a>
+  </div>
+  <div class="visit-map"></div>
+</section>
+</main>
+
+<footer>
+  <div class="logo">AKI<span>.</span></div>
+  <div>Japanese Dining · Marylebone · London</div>
+  <div>© 2026 Aki London</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
